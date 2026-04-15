@@ -6,6 +6,9 @@ info:
 http:
   method: GET
   url: "{{host}}/api/hello"
+  body:
+    type: text
+    data: dsadasddsads
   auth: inherit
 
 runtime:
