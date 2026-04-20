@@ -1,12 +1,17 @@
 info:
-  name: PickActivity_get
+  name: get_item_request
   type: http
   seq: 1
 
 http:
   method: GET
-  url: http://{{host}}:{{port}}/api/setup/pickAct/list
+  url: http://{{host}}:{{port}}/api/engineering/item_request
   auth: inherit
+
+runtime:
+  variables:
+    - name: port
+      value: "3000"
 
 settings:
   encodeUrl: true

@@ -1,11 +1,11 @@
 info:
-  name: get_items
+  name: get_receiving_warehouse_area
   type: http
-  seq: 11
+  seq: 8
 
 http:
   method: GET
-  url: http://{{host}}:{{port}}/api/setup/item
+  url: http://{{host}}:{{port}}/api/inventory/receiving_report/warehouse_area/1
   auth: inherit
 
 runtime:

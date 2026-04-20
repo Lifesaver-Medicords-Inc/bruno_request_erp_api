@@ -1,0 +1,42 @@
+info:
+  name: create_receiving_report
+  type: http
+  seq: 2
+
+http:
+  method: POST
+  url: http://{{host}}:{{port}}/api/inventory/receiving_report
+  body:
+    type: json
+    data: |-
+      {
+          "receiving_report": {
+              "supplier": "asdasda",
+              "supplier_id": 1,
+              "supplier": "Wally Bayola"
+          },
+          "receiving_report_details": [
+              {
+                  "item_code": "1010",
+                  "item_desc": "sdddfds",
+                  "ordered_qty": 22
+              },
+              {
+                  "item_code": "4323",
+                  "item_desc": "fssadas",
+                  "ordered_qty": 30
+              }
+          ]
+      }
+  auth: inherit
+
+runtime:
+  variables:
+    - name: port
+      value: "3000"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

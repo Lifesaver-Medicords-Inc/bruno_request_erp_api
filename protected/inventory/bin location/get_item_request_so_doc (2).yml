@@ -1,11 +1,11 @@
 info:
-  name: get_items
+  name: get_item_request_so_doc (2)
   type: http
-  seq: 11
+  seq: 6
 
 http:
   method: GET
-  url: http://{{host}}:{{port}}/api/setup/item
+  url: http://{{host}}:{{port}}/api/engineering/bin_location/1
   auth: inherit
 
 runtime:

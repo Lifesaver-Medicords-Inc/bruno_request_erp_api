@@ -1,0 +1,43 @@
+info:
+  name: delete_receiving_report
+  type: http
+  seq: 3
+
+http:
+  method: DELETE
+  url: http://{{host}}:{{port}}/api/inventory/receiving_report
+  body:
+    type: json
+    data: |-
+      {
+          "receiving_report": {
+              "id": 15,
+              "supplier": "asdasda",
+              "supplier_id": 1,
+              "supplier": "Wally BABA"
+          },
+          "receiving_report_details": [
+              {
+                  "item_code": "1010",
+                  "item_desc": "HELLO",
+                  "ordered_qty": 22
+              },
+              {
+                  "item_code": "4323",
+                  "item_desc": "fssadas",
+                  "ordered_qty": 30
+              }
+          ]
+      }
+  auth: inherit
+
+runtime:
+  variables:
+    - name: port
+      value: "3000"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

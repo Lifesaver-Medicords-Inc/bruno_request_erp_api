@@ -1,0 +1,45 @@
+info:
+  name: update_receiving_report
+  type: http
+  seq: 1
+
+http:
+  method: PUT
+  url: http://{{host}}:{{port}}/api/inventory/receiving_report
+  body:
+    type: json
+    data: |-
+      {
+          "receiving_report": {
+              "id": 15,
+              "supplier": "asdasda",
+              "supplier_id": 1,
+              "supplier": "Wally BABA"
+          },
+          "receiving_report_details": [
+              {
+                  "id": 18,
+                  "item_code": "1010",
+                  "item_desc": "asdsada",
+                  "ordered_qty": 22
+              },
+              {
+                  "id": 19,
+                  "item_code": "4323",
+                  "item_desc": "fssadas",
+                  "ordered_qty": 30
+              }
+          ]
+      }
+  auth: inherit
+
+runtime:
+  variables:
+    - name: port
+      value: "3000"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

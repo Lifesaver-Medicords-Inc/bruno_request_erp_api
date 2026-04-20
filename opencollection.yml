@@ -17,7 +17,7 @@ config:
 request:
   variables:
     - name: host
-      value: https://disordered-wilhelmina-nondetrimentally.ngrok-free.dev
+      value: 127.0.0.1
 bundled: false
 extensions:
   bruno:

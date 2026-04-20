@@ -1,0 +1,45 @@
+info:
+  name: update_pick_activity
+  type: http
+  seq: 6
+
+http:
+  method: PUT
+  url: http://{{host}}:{{port}}/api/engineering/pick_activity
+  body:
+    type: json
+    data: |-
+      {
+          "pick_activity": {
+              "id": 1,
+              "customer": "SpongeBob RoundPants",
+              "customer_code": "QWEER",
+              "sales_person": "Wally Bayola"
+          },
+          "pick_activity_details": [
+              {
+                "id": 1,
+                  "item_code": "gdfgfd",
+                  "item_description": "sdddfds",
+                  "pick_qty": 22
+              },
+              {
+                "id": 2,
+                  "serial_no": "1010",
+                  "item_description": "sdddfds",
+                  "pick_qty": 22
+              }
+          ]
+      }
+  auth: inherit
+
+runtime:
+  variables:
+    - name: port
+      value: "3000"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

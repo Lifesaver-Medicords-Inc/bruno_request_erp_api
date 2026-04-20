@@ -1,0 +1,42 @@
+info:
+  name: create_item_request
+  type: http
+  seq: 7
+
+http:
+  method: POST
+  url: http://{{host}}:{{port}}/api/engineering/item_request
+  body:
+    type: json
+    data: |-
+      {
+          "item_request": {
+              "requesting_dept": "asdasda",
+              "purpose": "sdfxcgfdfg",
+              "received_by": "Wally Bayola"
+          },
+          "item_request_details": [
+              {
+                  "serial_no": "1010",
+                  "item_desccription": "sdddfds",
+                  "required_qty": 22
+              },
+              {
+                  "serial_no": "1010",
+                  "item_desccription": "sdddfds",
+                  "required_qty": 22
+              }
+          ]
+      }
+  auth: inherit
+
+runtime:
+  variables:
+    - name: port
+      value: "3000"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
